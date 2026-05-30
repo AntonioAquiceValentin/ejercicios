@@ -5,12 +5,18 @@
 nota1 = float(input("Ingrese nota: "))
 nota2 = float(input("Ingrese nota: "))
 nota3 = float(input("Ingrese nota: "))
-#Sacar promedio de las 3 notas
-promedio = (nota1 + nota2 + nota3) / 3
-#mostrar si el alumno esta aprobado o no
-if promedio >20 or promedio <0:
-    print(f"error ")
-elif promedio >=11:
-    print(f"Aprobado")-15
+
+#Filtro que evita añadir una nota negativa o superior a 20
+
+if nota1<0 or nota1>20 or nota2<0 or nota2>20 or nota3<0 or nota3>20:
+    print("Error, ingresa una nota del 0 al 20.")
 else:
-    print(f"desaprobado")
+    promedio = (nota1 + nota2 + nota3) / 3
+    promedio = round(promedio,1)
+
+#mostrar si el alumno esta aprobado o no
+
+    if promedio >=11:
+        print(f"¡Felicitaciones! Aprobaste con {promedio}")
+    else:
+        print(f"¡Esfuerzate más! Desaprobaste {promedio}")
